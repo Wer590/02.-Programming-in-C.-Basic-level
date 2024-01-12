@@ -21,7 +21,7 @@
 
 #include <stdio.h>
 
-double power(float n, long p); 	// возведение в спепень x^y
+double power(float n, long p);	// возведение в спепень x^y
 double factorial(int n); 		// вычесление факториала
 double cosinus(float x); 
 
