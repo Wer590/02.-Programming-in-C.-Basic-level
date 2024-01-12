@@ -42,11 +42,11 @@ int main(int argc, char **argv)
 {
 	enum states 
 	{ 
-		READY = 0,
+		READY	= 0,
 		PREPFRE = 1, 
-		WAIT = 2, 
-		CHANGE = 3, 
-		RETURN = 4
+		WAIT	= 2, 
+		CHANGE	= 3, 
+		RETURN	= 4
 	} 
 	state = READY;
 	enum user_signal_states 
