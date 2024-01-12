@@ -63,25 +63,35 @@ int main(int argc, char **argv)
 			case READY:
 				printf("Ready\n");
 				user_signal = GetUserSignal();        
-				if(user_signal == RUBL_2) 
+				if(user_signal == RUBL_2)
+				{
 					state = PREPFRE;
-				if(user_signal == RUBL_1) 
+				}
+				if(user_signal == RUBL_1)
+				{
 					state = WAIT;
-				break;   
+				}
+			break;   
 			case PREPFRE:
 				printf("Preapare cofee\n");
 				state = READY;      
-				break;  
+			break;  
 			case WAIT:
 				printf("Wait\n");
 				user_signal = GetUserSignal();    
-				if(user_signal == RUBL_2) 
+				if(user_signal == RUBL_2)
+				{
 					state = CHANGE;
-				if(user_signal == RUBL_1) 
+				}
+				if(user_signal == RUBL_1)
+				{
 					state = PREPFRE;
-				if(user_signal == CANCEL) 
-					state = RETURN;      
-				break;        
+				}
+				if(user_signal == CANCEL)
+				{
+					state = RETURN;
+				}    
+			break;        
 			case CHANGE:
 				printf("Change 1 Rubl\n");  
 				state = PREPFRE;    
@@ -89,7 +99,7 @@ int main(int argc, char **argv)
 			case RETURN:
 				printf("Change 1 Rubl\n");  
 				state = READY;     
-				break;       
+			break;       
 		}
 	}
 	return 0;
