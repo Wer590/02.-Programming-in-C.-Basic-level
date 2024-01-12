@@ -29,8 +29,8 @@ int num_sum(int n)
 		summa += i;
 	}
 	return summa;
-	*/
-	return n*(n+1)/2;
+	*/ 
+	return n * (n + 1) / 2;
 }
 
 int main(int argc, char **argv)
