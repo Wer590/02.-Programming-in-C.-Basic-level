@@ -1,19 +1,5 @@
 /*
- *  E7 Практик 2
- *  Инверсия половинок
- *  Считать массив из 10 элементов и выполнить инверсию отдельно для 1-ой и 2-ой половин массива.
- *  Необходимо изменить считанный массив и напечатать его одним циклом.
- *
- *  Данные на входе:    10 целых элементов массива через пробел.
- *  Данные на выходе:   10 целых элементов массива через пробел.
- *
- *  Пример №1
- *  Данные на входе:    4 -5 3 10 -4 -6 8 -10 1 0
- *  Данные на выходе:   -4 10 3 -5 4 0 1 -10 8 -6
- *
- *  Пример №2
- *  Данные на входе:    1 2 3 4 5 6 7 8 9 10
- *  Данные на выходе:   5 4 3 2 1 10 9 8 7 6
+ *  Все функции используемые в модуле E
  *
  *
  */
@@ -29,16 +15,6 @@ void Input(int arr[], int size)
     {
         scanf("%d", &arr[i]);
     }
-}
-
-void SwapArr(int arr[], int i, int j)
-{
-    //int temp = arr[i];
-    //arr[i]=arr[j];
-    //arr[j]=temp;
-    arr[i] ^= arr[j];
-    arr[j] ^= arr[i];
-    arr[i] ^= arr[j];
 }
 
 void Print(int arr[], int size)
@@ -60,6 +36,16 @@ void SwapArr(int arr[], int i, int j)
     arr[i] ^= arr[j];
 }
 
+float Average(int arr[], int size)
+{
+    int average = 0;
+    for (int i=0; i<size; i++)
+    {
+        average += arr[i];
+    }
+    return (float)average/size;
+}
+
 void InversionToPrint(int arr[], int size)
 {
     for( int i = 0; i < size; i++) {
@@ -75,6 +61,95 @@ void InversionToPrint(int arr[], int size)
     }
 }
 
+int MaxPoz(int arr[], int size)
+{
+    int max = arr[0];
+    int max_poz = 1;
+    for (int i = 1; i < size; i++)
+    {
+        if (max < arr[i])
+        {
+            max = arr[i];
+            max_poz = i + 1;
+        }
+    }
+    return max_poz;
+}
+
+int Max(int arr[], int size)
+{
+    int max = arr[0];
+    for (int i = 1; i < size; i++)
+    {
+        if (max < arr[i])
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+int MinPoz(int arr[], int size)
+{
+    int min = arr[0];
+    int min_poz = 1;
+    for (int i = 1; i < size; i++)
+    {
+        if (min > arr[i])
+        {
+            min = arr[i];
+            min_poz = i + 1;
+        }
+    }
+    return min_poz;
+}
+
+int Min(int arr[], int size)
+{
+    int min = arr[0];
+    for (int i = 1; i < size; i++)
+    {
+        if (min > arr[i])
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+int Sum2Max(int arr[], int size)
+{
+    int max1 = 0;
+    int max2 = 1;
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] > arr[max1])
+        {
+            max2 = max1;
+            max1 = i;
+        }
+        else if (arr[i] > arr[max2])
+        {
+            max2 = i;
+        }
+
+    }
+    return arr[max1] + arr[max2];
+}
+
+int SumPositive(int arr[], int size)
+{
+    int sum = 0;
+    for (int i=0; i<size; i++)
+    {
+     if (arr[i] > 0)
+        {
+            sum += arr[i];
+        }
+    }
+    return sum;
+}
+
 int main(int argc, char **argv)
 {
     int arr[ARRAY_SIZE];
@@ -82,6 +157,6 @@ int main(int argc, char **argv)
     Print(arr, ARRAY_SIZE);
     SwapArr(arr, 0, 4);
     Print(arr, ARRAY_SIZE);
-    InversionPrint(arr, ARRAY_SIZE);
+    InversionToPrint(arr, ARRAY_SIZE);
     return 0;
 }

@@ -32,6 +32,10 @@ void Input(int arr[], int size)
 
 void SwapArr(int arr[], int i, int j)
 {
+    // при помощи XOR
+    // А все таки что лучше XOR или отдельная переменная temp?
+    // где выиграваем в скорости или в занимаеной памяти?
+    // короче не понятно, но интересно.
     arr[i] ^= arr[j];
     arr[j] ^= arr[i];
     arr[i] ^= arr[j];
