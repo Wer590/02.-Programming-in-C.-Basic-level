@@ -53,13 +53,21 @@ void reverseArray(int arr[], int num)
 
 int main(int argc, char **argv)
 {
-    int arr[ARRAY_SIZE]= {1, 2,3, 4,5, 6, 7,8,9,10};
-    //Input(arr, ARRAY_SIZE);
-    for(int i=0; i<3; i++)
-    {
-        reverseArray(arr +i*ARRAY_SIZE/3, ARRAY_SIZE/3);
+    int arr[ARRAY_SIZE]= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    //Input(arr,ARRAY_SIZE);
+    int temp = arr[ARRAY_SIZE-1];
+
+    for( int i = 0; i < ARRAY_SIZE; i++) {
+        if (i == 0) {
+            printf("%d ", temp);
+        }
+        else {
+            printf("%d ", arr[i-1]);
+        }
     }
     Print(arr, ARRAY_SIZE);
     return 0;
 }
+
+
 
