@@ -1,3 +1,7 @@
+/*
+ * провек=рка решения задачи E9 
+ * 
+ * */
 #include <stdio.h>
  
 void aPrint(int *arr, int len)
