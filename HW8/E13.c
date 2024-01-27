@@ -69,9 +69,9 @@ int Func(int arr_in[], int size, int arr_out[])
 
 int main(int argc, char **argv)
 {
-    int input_arr[ARRAY_SIZE] = {40, 105, 203, 1, 14, 1000, 22, 33, 44, 55};
+    int input_arr[ARRAY_SIZE];
     int output_arr[] = {0,};
-    //Input(input_arr,ARRAY_SIZE);
+    Input(input_arr,ARRAY_SIZE);
     int size = Func(input_arr, ARRAY_SIZE, output_arr);
     Print(output_arr, size);
     return 0;
