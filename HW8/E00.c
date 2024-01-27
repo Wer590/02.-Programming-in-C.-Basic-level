@@ -150,6 +150,20 @@ int SumPositive(int arr[], int size)
     return sum;
 }
 
+void ShiftRightArray(int arr[], int size, int shift)
+
+{
+    for (int j = 0; j < shift; j++ )
+    {
+        int temp = arr[size-1];
+        for (int i = size - 1; i > 0; i--)
+        {
+            arr[i] = arr[i -1];
+        }
+        arr[0] = temp;
+    }
+}
+
 int main(int argc, char **argv)
 {
     int arr[ARRAY_SIZE];
