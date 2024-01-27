@@ -142,7 +142,7 @@ int SumPositive(int arr[], int size)
     int sum = 0;
     for (int i=0; i<size; i++)
     {
-     if (arr[i] > 0)
+        if (arr[i] > 0)
         {
             sum += arr[i];
         }
@@ -161,6 +161,42 @@ void ShiftRightArray(int arr[], int size, int shift)
             arr[i] = arr[i -1];
         }
         arr[0] = temp;
+    }
+}
+
+void SortArr(int arr[], int size)
+{
+    for( int i = 0; i < size - 1; i++)
+    {
+        if (arr[i] % 10 > arr[i+1] % 10)
+        {
+            SwapArr(arr, i, i+1);
+            i = -1;
+        }
+    }
+}
+
+void SortArr(int arr[], int size)
+{
+    for( int i = 0; i < (size / 2) - 1; i++)
+    {
+        for (int j = i + 1; j < (size / 2); j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                SwapArr(arr, i, j);
+            }
+        }
+    }
+    for( int i = (size / 2); i < (size - 1); i++)
+    {
+        for (int j = (size - 1); j > i; j--)
+        {
+            if (arr[j] > arr[i])
+            {
+                SwapArr(arr, j, i);
+            }
+        }
     }
 }
 
