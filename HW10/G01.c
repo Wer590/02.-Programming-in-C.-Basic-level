@@ -17,8 +17,8 @@ const int line_width = 256;
 
 int main(int argc, char **argv)
 {
-    char *input_fn = "input_g01.txt";
-    char *output_fn = "output_g01.txt";
+    char *input_fn = "g01_input.txt";
+    char *output_fn = "g01_output.txt";
     char line[line_width];
     char c;
     FILE *fp;
