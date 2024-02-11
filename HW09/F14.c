@@ -42,7 +42,7 @@ int sum_between_ab(int from, int to, int size, int a[])
         to = from;
         from = temp;
     }
-    for (int i = from; i <= to && i < size; i++)
+    for (int i = from - 1; i <= to - 1 && i < size; i++)
     {
         result+= a[i];
     }

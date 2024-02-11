@@ -32,7 +32,7 @@ void Input(int arr[], int size)
 int count_between(int from, int to, int size, int a[])
 {
     int result = 0;
-    for (int i = from; i <= to && i < size; i++)
+    for (int i = from - 1; i <= to - 1 && i < size; i++)
     {
         result++;
     }
