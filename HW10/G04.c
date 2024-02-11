@@ -25,7 +25,7 @@
 int FileRead(int size, char *arr_a, char *arr_b)
 {
     FILE *f_in;
-    char name_in[] = "txt\\g04_input.txt";
+    char name_in[] = "input txt\\g04_input.txt";
     char c;
 
     if ((f_in = fopen(name_in, "r")) == NULL)
@@ -55,7 +55,7 @@ int FileRead(int size, char *arr_a, char *arr_b)
 int FileWrite(int size, char *arr)
 {
     FILE *f_out;
-    char name_out[] = "txt\\g04_output.txt";
+    char name_out[] = "output txt\\g04_output.txt";
 
     if ((f_out = fopen(name_out, "w")) == NULL)
     {

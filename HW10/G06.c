@@ -34,8 +34,8 @@ int is_palindrome(char *line)
 
 int main(void)
 {
-    char *input_fn = "txt\\g06_input.txt";
-    char *output_fn = "txt\\g06_output.txt";
+    char *input_fn = "input txt\\g06_input.txt";
+    char *output_fn = "output txt\\g06_output.txt";
     char line[line_width];
     FILE *fp;
 

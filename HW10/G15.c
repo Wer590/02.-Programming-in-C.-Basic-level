@@ -24,7 +24,7 @@ void input(char *strIn)
 {
     FILE *in;
 
-    in = fopen("txt\\g15_input.txt", "r");
+    in = fopen("input txt\\g15_input.txt", "r");
 
     while (fscanf(in, "%[^\n]", strIn) == 1)
         ;
@@ -50,7 +50,7 @@ void changeName(char *strExt, char *buffer)
 void output(char *strOut)
 {
     FILE *out;
-    out = fopen("txt\\g15_output.txt", "w");
+    out = fopen("output txt\\g15_output.txt", "w");
     fprintf(out, "%s", strOut);
     fclose(out);
 }

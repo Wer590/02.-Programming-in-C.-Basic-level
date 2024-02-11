@@ -27,8 +27,8 @@ int main(int argc, char **argv)
     int i, n;
 
     FILE *f_in, *f_out;
-    char name_in[] = "txt\\g02_input.txt";
-    char name_out[] = "txt\\g02_output.txt";
+    char name_in[] = "input txt\\g02_input.txt";
+    char name_out[] = "output txt\\g02_output.txt";
     f_in = fopen(name_in, "r");
     f_out = fopen(name_out, "w");
 

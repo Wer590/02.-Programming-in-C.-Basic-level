@@ -22,7 +22,7 @@
 int FileRead(int size, char *arr)
 {
     FILE *f_in;
-    char name_in[] = "txt\\g12_input.txt";
+    char name_in[] = "input txt\\g12_input.txt";
     char c;
 
     if ((f_in = fopen(name_in, "r")) == NULL)
@@ -45,7 +45,7 @@ int FileRead(int size, char *arr)
 int FileWrite(int size, char *arr)
 {
     FILE *f_out;
-    char name_out[] = "txt\\g12_output.txt";
+    char name_out[] = "output txt\\g12_output.txt";
     char *sp;
 
     if ((f_out = fopen(name_out, "w")) == NULL)
