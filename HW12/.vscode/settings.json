@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "inttypes.h": "c",
+        "locale.h": "c",
+        "argc.h": "c",
+        "stdio.h": "c",
+        "temp_api.h": "c"
+    }
+}
