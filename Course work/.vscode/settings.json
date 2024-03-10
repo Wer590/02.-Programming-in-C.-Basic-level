@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdint.h": "c",
+        "temp_api.h": "c",
+        "locale.h": "c",
+        "stdio.h": "c",
+        "inttypes.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
