@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
 
     SortByDate(ptr, control);
     SortByTempUp(ptr, control);
-    SortByTempDn(ptr, control);
+    //SortByTempDn(ptr, control);
     Print(ptr, control);
-    int u = SaveSVGSen(ptr, control);
+    //int u = SaveSVGSen(ptr, control);
 
     free(control);
     free(ptr);

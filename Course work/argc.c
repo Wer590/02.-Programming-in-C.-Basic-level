@@ -2,17 +2,17 @@
 
 int ArgHandler(int argc, char **argv, struct management *st)
 {
-    char ch[9] = "\0";
     int rez = 0;
 #ifdef DEBUG
     printf("%d\n", argc);
 #endif
     if (argc < 2)
     {
+        printf("Application for determining the minimum, maximum and average monthly or average annual temperature from a data file in .svg\n");
         printf("Required arguments missing: Try -h for help\n");
         return -1;
     }
-    while ((rez = getopt(argc, argv, "hf:s:m:pt:d")) != -1)
+    while ((rez = getopt(argc, argv, "hf:m:ptd")) != -1)
     {
         switch (rez)
         {
@@ -21,9 +21,8 @@ int ArgHandler(int argc, char **argv, struct management *st)
             printf("\nUsage:\n\
             -h This help text;\n\
             -f <file_name.svg> input .csv file for processing;\n\
-            -s <file_name.svg> output .csv file for saving processing results;\n\
             -m <month number is a number from 1 to 12> if this key is specified, then only statistics for the specified month are displayed;\n\
-            -t <sort_up sort_dn> sort data by ascending or descending temperature depending on the selected key, use with -f;\n\
+            -t sort data by ascending temperature, use with -f;\n\
             -d Sorting data by date, use with -f;\n\
             -p Printing an array of data, if a month is specified (the -m switch), then only data for the specified month is output to the terminal;\n");
             printf("Example: %s -f xxxxx.svg -m XX\n", argv[0]);
@@ -64,16 +63,7 @@ int ArgHandler(int argc, char **argv, struct management *st)
 #endif
             break;
         case 't':
-            strcpy(ch, optarg);
-            if (strstr(ch, "sort_up"))
-                st->flag_sort_temp_up = 1;
-            else if (strstr(ch, "sort_dn"))
-                st->flag_sort_temp_dn = 1;
-            else
-            {
-                printf("Unknown sub argument -t %s. Try -h for help\n", argv[optind - 1]);
-                return -1;
-            }
+            st->flag_sort_temp_up = 1;
 #ifdef DEBUG
             printf("Sorting data by temperature\n");
             printf("st->flag_sort_temp_up = %d\n", st->flag_sort_temp_up);
@@ -87,22 +77,22 @@ int ArgHandler(int argc, char **argv, struct management *st)
             printf("st->flag_sort_date = %d\n", st->flag_sort_date);
 #endif
             break;
-        case 's':
-            strcpy(st->output_file, optarg);
-            st->flag_out_file = 1;
-            FILE *out_file;
-            if ((out_file = fopen(st->output_file, "w")) == NULL)
-            {
-                perror("Error occured while opening output file!");
-                return -1;
-            }
-            fclose(out_file);
-            remove(st->output_file);
-#ifdef DEBUG
-            printf("st->output_file = \"%s\"\n", st->output_file);
-            printf("\"output.csv\" file for saving processing results\n");
-#endif
-            break;
+            /*       case 's':
+                        strcpy(st->output_file, optarg);
+                        st->flag_out_file = 1;
+                        FILE *out_file;
+                        if ((out_file = fopen(st->output_file, "w")) == NULL)
+                        {
+                            perror("Error occured while opening output file!");
+                            return -1;
+                        }
+                        fclose(out_file);
+                        remove(st->output_file);
+            #ifdef DEBUG
+                        printf("st->output_file = \"%s\"\n", st->output_file);
+                        printf("\"output.csv\" file for saving processing results\n");
+            #endif
+                        break;*/
         case '?':
             printf("Unknown argument: %s Try -h for help\n", argv[optind - 1]);
             return -1;
